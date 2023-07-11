@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"type":"group","id":"dadc9b9bfd5899a6","x":-220,"y":140,"width":730,"height":440,"color":"5","label":"generating keys offline"},
+		{"type":"group","id":"af159f1606bb1929","x":-220,"y":-360,"width":730,"height":420,"color":"4","label":"Encoding URL"},
+		{"type":"text","text":"encoding service","id":"3a7434a0d006163d","x":-200,"y":-20,"width":250,"height":60},
+		{"type":"text","text":"Client","id":"e790c71ff1fedf27","x":-200,"y":-340,"width":250,"height":60},
+		{"type":"text","text":"app server","id":"b2f3e7ba206c8401","x":-200,"y":-180,"width":250,"height":60},
+		{"type":"text","text":"DB","id":"35f75223538a61c8","x":240,"y":-180,"width":250,"height":60},
+		{"type":"text","text":"client","id":"8df3b91609b771f5","x":-200,"y":160,"width":250,"height":60},
+		{"type":"text","text":"app server","id":"ae9ddc32a9aa62ec","x":-200,"y":320,"width":250,"height":60},
+		{"type":"text","text":"key generator service","id":"453659706bef205a","x":-200,"y":500,"width":250,"height":60},
+		{"type":"text","text":"urls db","id":"07b989913d13e8ff","x":240,"y":320,"width":250,"height":60},
+		{"type":"text","text":"key db","id":"825ba5ee12ac4b2c","x":240,"y":500,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"92aa0ae1c894719b","fromNode":"e790c71ff1fedf27","fromSide":"bottom","toNode":"b2f3e7ba206c8401","toSide":"top","fromEnd":"arrow"},
+		{"id":"5a79c6eb2988d7ed","fromNode":"b2f3e7ba206c8401","fromSide":"bottom","toNode":"3a7434a0d006163d","toSide":"top","fromEnd":"arrow"},
+		{"id":"bc87c5071bc0a0f2","fromNode":"b2f3e7ba206c8401","fromSide":"right","toNode":"35f75223538a61c8","toSide":"left","fromEnd":"arrow"},
+		{"id":"e14eea9b85aafcc0","fromNode":"453659706bef205a","fromSide":"right","toNode":"825ba5ee12ac4b2c","toSide":"left","fromEnd":"arrow"},
+		{"id":"3e25a2bc28d277e8","fromNode":"ae9ddc32a9aa62ec","fromSide":"right","toNode":"07b989913d13e8ff","toSide":"left","fromEnd":"arrow"},
+		{"id":"40200f85ef0a759e","fromNode":"ae9ddc32a9aa62ec","fromSide":"bottom","toNode":"453659706bef205a","toSide":"top","fromEnd":"arrow"},
+		{"id":"0d149d06dbad0aec","fromNode":"8df3b91609b771f5","fromSide":"bottom","toNode":"ae9ddc32a9aa62ec","toSide":"top","fromEnd":"arrow"}
+	]
+}

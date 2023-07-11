@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"id":"dc144a4de33fd983","x":-140,"y":-120,"width":250,"height":60,"type":"text","text":"image hosting service"},
+		{"id":"3b67b9625cfe7a86","x":211,"y":-269,"width":250,"height":60,"type":"text","text":"object storage"},
+		{"id":"aa25f74f862701e4","x":213,"y":6,"width":250,"height":60,"type":"text","text":"database"},
+		{"id":"132942a9cf5d3fa9","x":-580,"y":-120,"width":250,"height":60,"type":"text","text":"client"}
+	],
+	"edges":[
+		{"id":"27c83795559aa63d","fromNode":"dc144a4de33fd983","fromSide":"right","toNode":"3b67b9625cfe7a86","toSide":"left","fromEnd":"arrow"},
+		{"id":"5fa911e17b276b52","fromNode":"dc144a4de33fd983","fromSide":"right","toNode":"aa25f74f862701e4","toSide":"left","fromEnd":"arrow"},
+		{"id":"737146f3f1f4c8f8","fromNode":"132942a9cf5d3fa9","fromSide":"top","toNode":"dc144a4de33fd983","toSide":"left","label":"upload image"},
+		{"id":"34f62c2049a7b261","fromNode":"132942a9cf5d3fa9","fromSide":"bottom","toNode":"dc144a4de33fd983","toSide":"left","label":"view feed, search"}
+	]
+}
