@@ -45,12 +45,34 @@ something that you are good at :)
 - also see each component of your system as a service (like a micro-service architecture, it's not a web server doing everything)
 
 ### step 6: Detailed design
-
 ### step 7: Identifying and resolving bottlenecks
 not it's time to:
+- add some *user limitations* for ensuring consistency in the system's performance
 - add *load balancers* for solving **single point of failures** problem
 - solve **reliabaility** with *redundancy (replication)*
 - add *partitioning (sharding)* for
 - add *cache* for better **availability**
 - talk about DB cleanup
 - talk about *Telemetry* for **monitoring** and **analytics**
+
+
+#### load balancing algorithms:
+- Least Connection Method
+- Least Response Time Method
+- Least Bandwidth Method
+- Round Robin Method
+- Weighted Round Robin Method
+- IP Hash
+
+#### cache
+- cache eviction policy
+	- FIFO
+	- LIFO
+	- LRU
+	- MRU
+	- MFU
+	- RR
+- cache invalidation strategy
+	- write through
+	- write around
+	- write back

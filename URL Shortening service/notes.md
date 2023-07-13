@@ -45,12 +45,39 @@ database: NoSQL ->  DynamoDB or Cassandra
 ### high level design
 #### 1. Encoding url
 Encoding algorithms: [cryptographic hashes in go](./cryptographic_hash.go)
+1. append url + user_id + increasing sequence number
+	- why user_id -> generate different hashes for same urls with different users
+	- why increasing sequence number -> generate different hashes for same urls and same users
+1. hash using `MD5` witch generates 128 bits
+2. encode using base64 to generate a 21 character string $${128 \over 6} \approx 21 $$
+3. select first 8 characters of the encoded result
+	- why 8 characters -> with 8 characters in base64 \[A-Z, a-z, 0-9\] we can generate 281 trillion keys $$64^8 \approx 281 Trillion$$
+4. 
 #### 2. generating keys beforehand
+- having a standalone service which have already generated 8 letter keys and the application only gets them
+- should handle the **concurrency issue** for multiple requests or multiple servers:
+	- get from db, load to memory, mark them as used in db
+	- get and remove should get atomic, a single transaction
+	- lock for keys
+	- randomness
 ![[high level design.canvas]]
-### detailed design
 ### identify and resolve bottlenecks
+#### scaling DB -> partitioning
+- range based partitioning
+	- needs a static partitioning scheme
+	- may cause unbalanced servers
+- hash based partitioning
+	- needs consistent hashing
+#### cache
+- cache 20% of the daily traffic for 80% of the requests
+- cache eviction policy: LFU
+- cache invalidation strategy: idk yet
 #### load balancer
-
+can add load balancer for:
+1. applications
+2. dbs
+3. caches
+load balancing algorithm: an intelligent round robin which periodically queries servers for their load and adjust loads based on it
 #### db cleanup
 - fanout on user read: remove the expired links when users try to view them
 - cron job: periodically get and remove expired links
