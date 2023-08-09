@@ -23,12 +23,13 @@ inputs or your own estimations:
 
 outputs:
 - Traffic estimates
-  - request per second (RPS)
-  - query per second (QPS)
+	- request per second (RPS)
+	- query per second (QPS)
 - Storage estimates (B)
+	- considering margin for capacity
 - Bandwidth estimates (in and out B/s)
 - Memory estimates
-  - 80-20 rule
+	- 80-20 rule
 
 
 ### Step 3: System interface definition or System APIs

@@ -14,9 +14,11 @@ users:
 - analytics: number of redirection of each link
 - REST API
 ### system interface
-- `GET redirect`
-- `POST createUrl(userKey, originalUrl, customAlias = None, expireDate = None)`
-- `POST deleteUrl(userKey, url)`
+```
+GET redirect
+POST createUrl(userKey, originalUrl, customAlias = None, expireDate = None)
+POST deleteUrl(userKey, url)
+```
 ### back of the envelope estimation
 - **assumptions**
 	- read heavy $${read \over write} = 100$$
@@ -25,7 +27,7 @@ users:
 	- each stored object is 500 bytes
 	- cache 20% of requests with 80% of the load
 - Traffic estimates
-	$$writeRPS = 500M({request \over month}) \times30({month\over day}) \times 24({day \over hour}) \times 3600({hour \over second}) \approx 200rps $$
+	$$writeRPS = 500M({request \over month}) \times1/30({month\over day}) \times 1/24({day \over hour}) \times 1/3600({hour \over second}) \approx 200rps $$
 	$$readRPS = 200rps \times 100 ({read\over write}) = 20K/s$$
 - Storage estimates
 $$storage = 500M({object \over month}) \times 5 (year) \times 500 ({B \over object}) \times 12 ({year \over month}) \approx 15TB$$
